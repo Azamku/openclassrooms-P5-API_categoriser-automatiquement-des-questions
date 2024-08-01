@@ -5,7 +5,7 @@ st.title("API FastAPI avec Streamlit !!!!!")
 text_input=st.text_input("Entrer le texte pour la prediction de tags")
 if st.button("Predict"):
 
-	response = requests.post("http://localhost:8000/docs/", json={"text": text_input})
+	response = requests.post("http://localhost:8000/docs#/default/predict_tags_predict_post", json={"text": text_input})
 
 	if response.status_code == 200:
 
