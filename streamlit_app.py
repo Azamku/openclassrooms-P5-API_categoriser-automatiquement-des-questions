@@ -11,4 +11,4 @@ if st.button("Predict"):
 		st.write(response.json())
 	else:
 
-		st.write("Erreur dans la prédiction")
+		st.write("Erreur dans la prediction")
