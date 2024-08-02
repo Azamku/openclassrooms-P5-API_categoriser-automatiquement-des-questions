@@ -9,9 +9,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.svm import SVC
-from wordcloud import WordCloud
+#from wordcloud import WordCloud
 import joblib
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import nltk
 import os
 import pandas as pd
@@ -19,7 +19,7 @@ import re
 import seaborn as sns
 import spacy
 import sys
-import torch
+#import torch
 
 
 # Telecharger les stopwords et tokenizer de NLTK
