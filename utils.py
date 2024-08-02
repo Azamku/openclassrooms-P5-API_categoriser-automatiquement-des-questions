@@ -16,8 +16,7 @@ import nltk
 import os
 import pandas as pd
 import re
-import seaborn as sns
-import spacy
+#import spacy
 import sys
 #import torch
 
