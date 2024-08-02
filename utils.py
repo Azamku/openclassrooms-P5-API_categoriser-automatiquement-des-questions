@@ -10,7 +10,6 @@ from nltk.tokenize import word_tokenize
 from sklearn.decomposition import LatentDirichletAllocation
 from sklearn.svm import SVC
 #from wordcloud import WordCloud
-import joblib
 #import matplotlib.pyplot as plt
 import nltk
 import os
