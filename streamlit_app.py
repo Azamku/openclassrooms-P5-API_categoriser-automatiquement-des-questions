@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import joblib
 import utils
-#import spacy
+import spacy
 import subprocess
 import os
 
