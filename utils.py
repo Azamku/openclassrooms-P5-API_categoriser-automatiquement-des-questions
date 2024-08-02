@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 from collections import Counter
 from datetime import datetime
-from flask import Flask, request, jsonify
+#from flask import Flask, request, jsonify
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
@@ -22,7 +22,7 @@ import sys
 import torch
 
 
-# Télécharger les stopwords et tokenizer de NLTK
+# Telecharger les stopwords et tokenizer de NLTK
 # nltk.download('stopwords')
 # nltk.download('punkt')
 
@@ -46,22 +46,22 @@ def clean_html_code(text):
 def normalize_text(text):
     # Convertir en minuscules
     text = text.lower()
-    # Supprimer la ponctuation et les caractères spéciaux
+    # Supprimer la ponctuation et les caractï¿½res spï¿½ciaux
     text = re.sub(r'\W+', ' ', text)
     # Supprimer plusieurs espaces par un espace
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
 
-# Fonction de prétraitement complet du texte
+# Fonction de prï¿½traitement complet du texte
 def preprocess_text(text):
-# Charger le modèle anglais de SpaCy
+# Charger le modï¿½le anglais de SpaCy
     nlp = spacy.load('en_core_web_sm')
 
 # Initialiser le stemmer de NLTK
     stemmer = PorterStemmer()
 
-# Ajouter des stopwords personnalisés
+# Ajouter des stopwords personnalisï¿½s
     custom_stopwords = set([
     'like', 'question', 'use', 'want', 'one', 'know', 'work', 'example', 'code', 'seem', 
     'using', 'instead', 'way', 'get', 'would', 'need', 'following', '1', '2', 'run', 
@@ -79,11 +79,11 @@ def preprocess_text(text):
     # Utilisation de SpaCy pour lemmatisation et POS tagging
     doc = nlp(text)
     tokens = [token.lemma_ for token in doc if token.pos_ == 'NOUN' and token.text not in all_stopwords]
-    # Stemming des tokens (si nécessaire)
+    # Stemming des tokens (si nï¿½cessaire)
     #tokens = [stemmer.stem(token) for token in tokens]
     return tokens
 
-# Fonction de prétraitement complet du texte (pour use,bert,w2vec)
+# Fonction de prï¿½traitement complet du texte (pour use,bert,w2vec)
 def preprocess_text_NN(text):
     # Nettoyage du texte HTML et suppression des portions de code
     text = clean_html_code(text)
