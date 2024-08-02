@@ -54,9 +54,9 @@ def normalize_text(text):
 
 
 # Fonction de pr�traitement complet du texte
-def preprocess_text(text):
+def preprocess_text(text,nlp):
 # Charger le mod�le anglais de SpaCy
-    nlp = spacy.load('en_core_web_sm')
+    #nlp = spacy.load('en_core_web_sm')
 
 # Initialiser le stemmer de NLTK
     stemmer = PorterStemmer()
