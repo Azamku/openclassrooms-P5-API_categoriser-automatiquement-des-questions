@@ -7,7 +7,7 @@ text_input=st.text_input("Entrer le texte pour la prediction de tags")
 
 if st.button("Predict"):
 
-	response = requests.get("http://localhost:8000/predict", json={"text": text_input})
+	response = requests.post("http://localhost:8000/predict/", data={"text": text_input})
 
 	if response.status_code == 200:
 
