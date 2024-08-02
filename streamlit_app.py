@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import joblib
+import utils
 
 st.title("API FastAPI avec Streamlit !!!!!")
 text_input=st.text_input("Entrer le texte pour la prediction de tags")
