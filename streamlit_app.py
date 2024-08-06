@@ -1,21 +1,11 @@
 ﻿import streamlit as st
-import requests
-import joblib
-import utils
 import spacy
-import subprocess
-import os
 
-# Telecharger le modèle SpaCy si nécessaire
-def install_spacy_model():
-    try:
-        spacy.load("en_core_web_sm")
-    except OSError:
-        subprocess.run(["python", "download_spacy_model.py"])
-        spacy.load("en_core_web_sm")
+st.title("Test Spacy Import")
 
-install_spacy_model()
+# Charger le modèle spacy
+nlp = spacy.load("en_core_web_sm")
+doc = nlp("Hello, world!")
 
-
-st.title("API FastAPI avec Streamlit !!!!!")
-text_input=st.text_input("Entrer le texte pour la prediction de tags")
+# Afficher le texte analysé
+st.write(doc.text)
