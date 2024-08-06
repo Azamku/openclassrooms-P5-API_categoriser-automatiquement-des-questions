@@ -1,4 +1,4 @@
-import streamlit as st
+﻿import streamlit as st
 import requests
 import joblib
 import utils
@@ -8,9 +8,11 @@ import os
 
 # Telecharger le modèle SpaCy si nécessaire
 def install_spacy_model():
-    model_path = os.path.join(spacy.util.get_package_path("spacy"), "data", "en_core_web_sm")
-    if not os.path.exists(model_path):
+    try:
+        spacy.load("en_core_web_sm")
+    except OSError:
         subprocess.run(["python", "download_spacy_model.py"])
+        spacy.load("en_core_web_sm")
 
 install_spacy_model()
 
