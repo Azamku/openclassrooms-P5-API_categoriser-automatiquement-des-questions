@@ -17,10 +17,3 @@ try:
 except Exception as e:
     st.write(f"Erreur lors du chargement du modèle Spacy: {e}")
 
-# Analyser un texte d'exemple
-try:
-    doc = nlp("Hello, world!")
-    st.write("Texte analysé avec succès.")
-    st.write(doc.text)
-except Exception as e:
-    st.write(f"Erreur lors de l'analyse du texte: {e}")
