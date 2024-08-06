@@ -1,7 +1,7 @@
 fastapi==0.95.2
 uvicorn==0.22.0
 joblib==1.2.0
-pandas==2.0.3
+pandas==1.5.3  # Version compatible avec Streamlit 1.20.0
 numpy==1.24.3
 requests==2.28.2
 spacy==3.5.0
