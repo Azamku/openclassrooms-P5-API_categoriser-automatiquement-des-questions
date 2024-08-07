@@ -23,6 +23,13 @@ except OSError:
     nlp = spacy.load("en_core_web_sm")
     st.write("Modèle Spacy chargé avec succès après installation.")
 
+# Importer joblib avec gestion des erreurs pour débogage
+try:
+    import joblib
+    st.write("joblib importé avec succès.")
+except ModuleNotFoundError as e:
+    st.write(f"Erreur lors de l'importation de joblib: {e}")
+
 
 # Charger les modèles pré-entraînés
 try:

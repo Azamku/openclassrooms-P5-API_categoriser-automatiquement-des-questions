@@ -5,3 +5,4 @@ en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_
 importlib-metadata==5.2.0
 numpy==1.24.2
 pandas==1.5.3
+joblib
