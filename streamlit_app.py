@@ -9,7 +9,20 @@ import subprocess
 import sys
 
 # Assurez-vous que les ressources NLTK sont téléchargées
-subprocess.run([sys.executable, "download_nltk_resources.py"], check=True)
+try:
+    result = subprocess.run(
+        [sys.executable, "download_nltk_resources.py"],
+        check=True,
+        capture_output=True,
+        text=True
+    )
+    print("NLTK resources downloaded successfully.")
+    print("STDOUT:", result.stdout)
+    print("STDERR:", result.stderr)
+except subprocess.CalledProcessError as e:
+    print(f"Error while downloading NLTK resources: {e}")
+    print("STDOUT:", e.stdout)
+    print("STDERR:", e.stderr)
 
 
 # Afficher les versions des bibliothèques
