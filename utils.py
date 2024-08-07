@@ -30,6 +30,18 @@ try:
 except ImportError as e:
     print(f"Erreur lors de l'importation de BeautifulSoup: {e}")
 
+try:
+    from nltk.corpus import stopwords
+    from nltk.stem import PorterStemmer
+    from nltk.stem import WordNetLemmatizer
+    from nltk.tokenize import word_tokenize
+    nltk.download('stopwords')
+    nltk.download('punkt')
+    nltk.download('wordnet')
+    print("NLTK et ressources importés avec succès.")
+except ImportError as e:
+    print(f"Erreur lors de l'importation de NLTK: {e}")
+
 
 # Fonction pour nettoyer le texte HTML et enlever les portions de code
 def clean_html_code(text):
