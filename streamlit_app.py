@@ -8,6 +8,7 @@ import joblib
 import subprocess
 import sys
 
+st.write(f"debut code telech nltk: ")
 # Assurez-vous que les ressources NLTK sont téléchargées
 try:
     result = subprocess.run(
@@ -23,7 +24,7 @@ except subprocess.CalledProcessError as e:
     print(f"Error while downloading NLTK resources: {e}")
     print("STDOUT:", e.stdout)
     print("STDERR:", e.stderr)
-
+st.write(f"fin code telech nltk")
 
 # Afficher les versions des bibliothèques
 st.write(f"Version de Spacy: {spacy.__version__}")
