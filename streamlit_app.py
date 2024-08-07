@@ -5,7 +5,6 @@ import pandas as pd
 #from utils import preprocess_text  # Assurez-vous que utils.py est dans le même répertoire
 import joblib
 
-st.title("Test Spacy Import")
 
 # Afficher les versions des bibliothèques
 st.write(f"Version de Spacy: {spacy.__version__}")
@@ -49,6 +48,19 @@ try:
     st.write("Modèle MultiLabelBinarizer chargé avec succès.")
 except Exception as e:
     st.write(f"Erreur lors du chargement du modèle MultiLabelBinarizer: {e}")
+
+st.title("API FastAPI avec Streamlit !!!!!")
+text_input = st.text_input("Entrer le texte pour la prédiction de tags")
+
+if st.button("Predict"):
+    if text_input:
+        # Prétraiter le texte et le joindre en une chaîne de caractères
+        text_cleaned_list = preprocess_text(text_input)
+        st.write("text_cleaned_list: ", text_cleaned_list)
+    else:
+        st.write("Veuillez entrer du texte pour la prédiction.")
+else:
+    st.write("Cliquez sur le bouton pour obtenir une prédiction.")
 
 
 # Analyser un texte d'exemple
