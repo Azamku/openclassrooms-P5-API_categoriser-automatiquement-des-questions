@@ -30,6 +30,12 @@ try:
 except ModuleNotFoundError as e:
     st.write(f"Erreur lors de l'importation de joblib: {e}")
 
+# Importer scikit-learn avec gestion des erreurs pour débogage
+try:
+    import sklearn
+    st.write("scikit-learn importé avec succès.")
+except ModuleNotFoundError as e:
+    st.write(f"Erreur lors de l'importation de scikit-learn: {e}")
 
 # Charger les modèles pré-entraînés
 try:
