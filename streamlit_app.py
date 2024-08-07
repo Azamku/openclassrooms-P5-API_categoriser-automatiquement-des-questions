@@ -11,6 +11,15 @@ st.write(f"Version de Spacy: {spacy.__version__}")
 st.write(f"Version de Numpy: {numpy.__version__}")
 st.write(f"Version de Pandas: {pd.__version__}")
 
+
+# Vérifier l'importation de preprocess_text
+try:
+    from utils import preprocess_text
+    st.write("Fonction preprocess_text importée avec succès.")
+except ImportError as e:
+    st.write(f"Erreur lors de l'importation de preprocess_text: {e}")
+    
+	
 # Charger le modèle spacy
 try:
     nlp = spacy.load("en_core_web_sm")
