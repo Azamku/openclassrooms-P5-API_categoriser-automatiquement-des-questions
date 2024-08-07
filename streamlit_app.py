@@ -14,5 +14,9 @@ st.write(f"Version de Pandas: {pd.__version__}")
 try:
     nlp = spacy.load("en_core_web_sm")
     st.write("Modèle Spacy chargé avec succès.")
-except Exception as e:
-    st.write(f"Erreur lors du chargement du modèle Spacy: {e}")
+except OSError:
+    st.write("Le modèle Spacy 'en_core_web_sm' n'est pas installé. Installation en cours...")
+    from spacy.cli import download
+    download("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm")
+    st.write("Modèle Spacy chargé avec succès après installation.")
