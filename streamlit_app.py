@@ -5,6 +5,12 @@ import pandas as pd
 #from utils import preprocess_text  # Assurez-vous que utils.py est dans le même répertoire
 import joblib
 
+import subprocess
+import sys
+
+# Assurez-vous que les ressources NLTK sont téléchargées
+subprocess.run([sys.executable, "download_nltk_resources.py"], check=True)
+
 
 # Afficher les versions des bibliothèques
 st.write(f"Version de Spacy: {spacy.__version__}")
@@ -19,7 +25,7 @@ try:
 except ImportError as e:
     st.write(f"Erreur lors de l'importation de preprocess_text: {e}")
     
-	
+
 # Charger le modèle spacy
 try:
     nlp = spacy.load("en_core_web_sm")
