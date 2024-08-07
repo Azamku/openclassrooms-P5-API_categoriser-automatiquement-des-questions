@@ -1,4 +1,4 @@
-# pretraitement version spacy :
+﻿# pretraitement version spacy :
 from bs4 import BeautifulSoup
 from collections import Counter
 from datetime import datetime
@@ -24,7 +24,11 @@ import sys
 # nltk.download('stopwords')
 # nltk.download('punkt')
 
-
+try:
+    from bs4 import BeautifulSoup
+    print("BeautifulSoup importé avec succès.")
+except ImportError as e:
+    print(f"Erreur lors de l'importation de BeautifulSoup: {e}")
 
 
 # Fonction pour nettoyer le texte HTML et enlever les portions de code
