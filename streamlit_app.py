@@ -83,7 +83,7 @@ text_input = st.text_input("Entrer le texte pour la prédiction de tags")
 if st.button("Predict"):
     if text_input:
         # Prétraiter le texte et le joindre en une chaîne de caractères
-        text_cleaned_list = preprocess_text(text_input)
+        #text_cleaned_list = preprocess_text(text_input)
         st.write("text_cleaned_list: ", text_cleaned_list)
     else:
         st.write("Veuillez entrer du texte pour la prédiction.")
