@@ -2,7 +2,7 @@
 import spacy
 import numpy
 import pandas as pd
-#from utils import preprocess_text  # Assurez-vous que utils.py est dans le même répertoire
+from utils import preprocess_text  # Assurez-vous que utils.py est dans le même répertoire
 import joblib
 
 import subprocess
