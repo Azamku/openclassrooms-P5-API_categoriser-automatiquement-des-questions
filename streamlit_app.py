@@ -86,6 +86,7 @@ if st.button("Predict"):
         # Prétraiter le texte et le joindre en une chaîne de caractères
         text_cleaned_list = preprocess_text(text_input)
         st.write("text_cleaned_list: ", text_cleaned_list)
+        st.write("tags predits:",mlb_job.predict(text_cleaned_list))
     else:
         st.write("Veuillez entrer du texte pour la prédiction.")
 else:
@@ -93,10 +94,10 @@ else:
 
 
 # Analyser un texte d'exemple
-try:
-    doc = nlp("Hello, world!")
-    st.write("Texte analysé avec succès.")
-    # Afficher le texte analysé
-    st.write(doc.text)
-except Exception as e:
-    st.write(f"Erreur lors de l'analyse du texte: {e}")
+# try:
+#     doc = nlp("Hello, world!")
+#     st.write("Texte analysé avec succès.")
+#     # Afficher le texte analysé
+#     st.write(doc.text)
+# except Exception as e:
+#     st.write(f"Erreur lors de l'analyse du texte: {e}")
