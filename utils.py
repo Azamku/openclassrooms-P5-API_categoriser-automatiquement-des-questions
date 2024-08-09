@@ -55,7 +55,7 @@ def clean_html_code(text):
     text = re.sub(r'<code>.*?</code>', '', text, flags=re.DOTALL)
     # Supprimer les balises <p> en conservant le contenu
     text = re.sub(r'</?p>', '', text)
-    text = re.sub(r'\n', ' ', text)
+    text = re.sub(r'\WA+', ' ', text)
     # Utiliser BeautifulSoup pour nettoyer les balises HTML
     soup = BeautifulSoup(text, "html.parser")
     cleaned_text = soup.get_text()
