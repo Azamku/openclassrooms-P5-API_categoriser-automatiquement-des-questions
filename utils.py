@@ -97,11 +97,12 @@ def preprocess_text(text):
     nltk_stopwords = set(stopwords.words('english'))
     all_stopwords = nltk_stopwords.union(custom_stopwords)
     # Nettoyage du texte HTML et suppression des portions de code
-    st.write("texte brut:", text)
+    # st.write("texte brut:", text)
     text = clean_html_code(text)
-    st.write("texte nettoyé:", text)
+    
     # Normalisation
-    #text = normalize_text(text)
+    text = normalize_text(text)
+    st.write("texte nettoyé:", text)
     # Utilisation de SpaCy pour lemmatisation et POS tagging
     doc = nlp(text)
     tokens = [token.lemma_ for token in doc if token.pos_ == 'NOUN' and token.text not in all_stopwords]
