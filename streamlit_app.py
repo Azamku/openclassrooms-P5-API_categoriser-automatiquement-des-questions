@@ -88,7 +88,7 @@ if st.button("Predict"):
         st.write("text_cleaned_list: ", text_cleaned_list)
         # Joindre les mots prétraités en une seule chaîne de caractères
         text_cleaned_joined = ' '.join(text_cleaned_list)
-        st.write("text_cleaned_joined: ", text_cleaned_list)
+        print("text_cleaned_joined: ", text_cleaned_list)
         bow_predict_result=bow_model.predict(text_cleaned_list)
         st.write("tags predits:",bow_predict_result)
         tags_predits=mlb_job.inverse_transform(bow_predict_result)
