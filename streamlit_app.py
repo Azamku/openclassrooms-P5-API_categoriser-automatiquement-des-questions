@@ -121,11 +121,11 @@ if st.button("Predict"):
         st.write("predicted_tags_list: ",predicted_tags_list)
         #fin debogue
 
-        #bow_predict_result=bow_model.predict(text_cleaned_list)
-        # bow_predict_result=bow_model.predict(text_cleaned_list)
-        # st.write("tags predits:",bow_predict_result)
-        # tags_predits=mlb_job.inverse_transform(bow_predict_result)
-        # st.write("tags_predits apres inverse:",tags_predits)
+        bow_predict_result=bow_model.predict(text_cleaned_list)
+        bow_predict_result=bow_model.predict(text_cleaned_list)
+        st.write("tags predits:",bow_predict_result)
+        tags_predits=mlb_job.inverse_transform(bow_predict_result)
+        st.write("tags_predits apres inverse:",tags_predits)
     else:
         st.write("Veuillez entrer du texte pour la prédiction.")
 else:
