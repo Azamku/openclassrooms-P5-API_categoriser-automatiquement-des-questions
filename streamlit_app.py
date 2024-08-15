@@ -92,7 +92,7 @@ if st.button("Predict"):
         # debut debogue
         # Le modèle s'attend à recevoir une liste ou un tableau de textes
         vectorizer = bow_model.named_steps['vectorizer']
-        st.write("vectorizer vocabulary: ", vectorizer.vocabulary_)
+        #st.write("vectorizer vocabulary: ", vectorizer.vocabulary_)
     
         # Vérifier quels termes de text_cleaned sont dans le vocabulaire
         terms_in_vocab = [term for term in text_cleaned_list if term in vectorizer.vocabulary_]
