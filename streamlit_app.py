@@ -98,7 +98,7 @@ if st.button("Predict"):
         terms_in_vocab = [term for term in text_cleaned_list if term in vectorizer.vocabulary_]
         st.write("terms_in_vocab: ", terms_in_vocab)
 
-        text_vectorized = vectorizer.transform([text_cleaned_list])  
+        text_vectorized = vectorizer.transform(text_cleaned_list)  
         text_vectorized_array = text_vectorized.toarray()
         st.write("texte vectorisé : ", text_vectorized_array)  # Afficher le tableau pour déboguer
         #fin debogue
