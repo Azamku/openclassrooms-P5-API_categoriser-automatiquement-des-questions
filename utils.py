@@ -107,7 +107,7 @@ def preprocess_text(text):
     doc = nlp(text)
     tokens = [token.lemma_ for token in doc if token.pos_ == 'NOUN' and token.text not in all_stopwords]
     # Stemming des tokens (si n�cessaire)
-    #tokens = [stemmer.stem(token) for token in tokens]
+    tokens = [stemmer.stem(token) for token in tokens]
     return tokens
 
 # Fonction de pr�traitement complet du texte (pour use,bert,w2vec)
