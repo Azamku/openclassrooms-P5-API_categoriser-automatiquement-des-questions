@@ -106,6 +106,20 @@ if st.button("Predict"):
         df_vectorized = pd.DataFrame(text_vectorized_array, columns=vectorizer.get_feature_names_out())
         non_zero_columns = df_vectorized.loc[:, (df_vectorized != 0).any(axis=0)]
         st.write("Non-zero columns: \n", non_zero_columns)
+
+        # Prédiction avec le modèle de classification
+        classifier = bow_model.named_steps['classifier']
+        predicted_tags = classifier.predict(text_vectorized)
+        st.write("predicted_tags: ", predicted_tags)  # Afficher les prédictions brutes pour déboguer
+    
+        # Inverse transform des prédictions
+        predicted_tags_inverse = mlb_job.inverse_transform(predicted_tags)
+        st.write("predicted_tags_inverse: ", predicted_tags_inverse)  # Afficher les prédictions inverses pour déboguer
+    
+        # Conversion des tags prédits en liste de chaînes de caractères
+        predicted_tags_list = [tag for tags in predicted_tags_inverse for tag in tags]
+    
+    st.write(predicted_tags_list)
         #fin debogue
 
         #bow_predict_result=bow_model.predict(text_cleaned_list)
