@@ -122,7 +122,7 @@ if st.button("Predict"):
         # st.write("predicted_tags_list: ",predicted_tags_list)
         #fin debogue
 
-        bow_predict_result=bow_model.predict(text_cleaned_joined)
+        bow_predict_result=bow_model.predict([text_cleaned_joined])
         st.write("tags predits:",bow_predict_result)
         tags_predits=mlb_job.inverse_transform(bow_predict_result)
         st.write("tags_predits apres inverse:",tags_predits)
