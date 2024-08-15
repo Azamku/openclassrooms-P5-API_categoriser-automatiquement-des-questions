@@ -117,16 +117,15 @@ if st.button("Predict"):
         st.write("predicted_tags_inverse: ", predicted_tags_inverse)  # Afficher les prédictions inverses pour déboguer
     
         # Conversion des tags prédits en liste de chaînes de caractères
-        predicted_tags_list = [tag for tags in predicted_tags_inverse for tag in tags]
-    
-    st.write(predicted_tags_list)
+        predicted_tags_list = [tag for tags in predicted_tags_inverse for tag in tags]    
+        st.write("predicted_tags_list: ",predicted_tags_list)
         #fin debogue
 
         #bow_predict_result=bow_model.predict(text_cleaned_list)
-        bow_predict_result=bow_model.predict(text_cleaned_list)
-        st.write("tags predits:",bow_predict_result)
-        tags_predits=mlb_job.inverse_transform(bow_predict_result)
-        st.write("tags_predits apres inverse:",tags_predits)
+        # bow_predict_result=bow_model.predict(text_cleaned_list)
+        # st.write("tags predits:",bow_predict_result)
+        # tags_predits=mlb_job.inverse_transform(bow_predict_result)
+        # st.write("tags_predits apres inverse:",tags_predits)
     else:
         st.write("Veuillez entrer du texte pour la prédiction.")
 else:
