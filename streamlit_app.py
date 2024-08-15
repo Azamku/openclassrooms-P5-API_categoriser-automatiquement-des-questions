@@ -87,8 +87,8 @@ if st.button("Predict"):
         text_cleaned_list = preprocess_text(text_input)
         st.write("text_cleaned_list: ", text_cleaned_list)
         # Joindre les mots prétraités en une seule chaîne de caractères
-        text_cleaned_joined = ' '.join(text_cleaned_list)
-        st.write("text_cleaned_joined: ", text_cleaned_joined)
+        # text_cleaned_joined = ' '.join(text_cleaned_list)
+        # st.write("text_cleaned_joined: ", text_cleaned_joined)
         # debut debogue
         # Le modèle s'attend à recevoir une liste ou un tableau de textes
         vectorizer = bow_model.named_steps['vectorizer']
@@ -98,7 +98,7 @@ if st.button("Predict"):
         terms_in_vocab = [term for term in text_cleaned_list if term in vectorizer.vocabulary_]
         print("terms_in_vocab: ", terms_in_vocab)
         #fin debogue
-        
+
         #bow_predict_result=bow_model.predict(text_cleaned_list)
         bow_predict_result=bow_model.predict(text_cleaned_joined)
         st.write("tags predits:",bow_predict_result)
