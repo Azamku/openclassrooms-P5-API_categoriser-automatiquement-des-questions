@@ -92,40 +92,40 @@ if st.button("Predict"):
 
         # debut debogue
         # Le modèle s'attend à recevoir une liste ou un tableau de textes
-        # vectorizer = bow_model.named_steps['vectorizer']
-        # #st.write("vectorizer vocabulary: ", vectorizer.vocabulary_)
+        vectorizer = bow_model.named_steps['vectorizer']
+        #st.write("vectorizer vocabulary: ", vectorizer.vocabulary_)
     
-        # # Vérifier quels termes de text_cleaned sont dans le vocabulaire
-        # terms_in_vocab = [term for term in text_cleaned_list if term in vectorizer.vocabulary_]
-        # st.write("terms_in_vocab: ", terms_in_vocab)
+        # Vérifier quels termes de text_cleaned sont dans le vocabulaire
+        terms_in_vocab = [term for term in text_cleaned_list if term in vectorizer.vocabulary_]
+        st.write("terms_in_vocab: ", terms_in_vocab)
 
-        # text_vectorized = vectorizer.transform(text_cleaned_list)  
-        # text_vectorized_array = text_vectorized.toarray()
-        # #st.write("texte vectorisé : ", text_vectorized_array)  # Afficher le tableau pour déboguer
+        text_vectorized = vectorizer.transform(text_cleaned_list)  
+        text_vectorized_array = text_vectorized.toarray()
+        #st.write("texte vectorisé : ", text_vectorized_array)  # Afficher le tableau pour déboguer
 
-        # # Créer un DataFrame pour inspecter les termes activés
-        # df_vectorized = pd.DataFrame(text_vectorized_array, columns=vectorizer.get_feature_names_out())
-        # non_zero_columns = df_vectorized.loc[:, (df_vectorized != 0).any(axis=0)]
-        # st.write("Non-zero columns: \n", non_zero_columns)
+        # Créer un DataFrame pour inspecter les termes activés
+        df_vectorized = pd.DataFrame(text_vectorized_array, columns=vectorizer.get_feature_names_out())
+        non_zero_columns = df_vectorized.loc[:, (df_vectorized != 0).any(axis=0)]
+        st.write("Non-zero columns: \n", non_zero_columns)
 
-        # # Prédiction avec le modèle de classification
-        # classifier = bow_model.named_steps['classifier']
-        # predicted_tags = classifier.predict(text_vectorized)
-        # st.write("predicted_tags: ", predicted_tags)  # Afficher les prédictions brutes pour déboguer
+        # Prédiction avec le modèle de classification
+        classifier = bow_model.named_steps['classifier']
+        predicted_tags = classifier.predict(text_vectorized)
+        st.write("predicted_tags: ", predicted_tags)  # Afficher les prédictions brutes pour déboguer
     
-        # # Inverse transform des prédictions
-        # predicted_tags_inverse = mlb_job.inverse_transform(predicted_tags)
-        # st.write("predicted_tags_inverse: ", predicted_tags_inverse)  # Afficher les prédictions inverses pour déboguer
+        # Inverse transform des prédictions
+        predicted_tags_inverse = mlb_job.inverse_transform(predicted_tags)
+        st.write("predicted_tags_inverse: ", predicted_tags_inverse)  # Afficher les prédictions inverses pour déboguer
     
-        # # Conversion des tags prédits en liste de chaînes de caractères
-        # predicted_tags_list = [tag for tags in predicted_tags_inverse for tag in tags]    
-        # st.write("predicted_tags_list: ",predicted_tags_list)
+        # Conversion des tags prédits en liste de chaînes de caractères
+        predicted_tags_list = [tag for tags in predicted_tags_inverse for tag in tags]    
+        st.write("predicted_tags_list: ",predicted_tags_list)
         #fin debogue
 
-        bow_predict_result=bow_model.predict(text_cleaned_list)
-        st.write("tags predits:",bow_predict_result)
-        tags_predits=mlb_job.inverse_transform(bow_predict_result)
-        st.write("tags_predits apres inverse:",tags_predits)
+        # bow_predict_result=bow_model.predict(text_cleaned_list)
+        # st.write("tags predits:",bow_predict_result)
+        # tags_predits=mlb_job.inverse_transform(bow_predict_result)
+        # st.write("tags_predits apres inverse:",tags_predits)
     else:
         st.write("Veuillez entrer du texte pour la prédiction.")
 else:
