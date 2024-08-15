@@ -100,7 +100,12 @@ if st.button("Predict"):
 
         text_vectorized = vectorizer.transform(text_cleaned_list)  
         text_vectorized_array = text_vectorized.toarray()
-        st.write("texte vectorisé : ", text_vectorized_array)  # Afficher le tableau pour déboguer
+        #st.write("texte vectorisé : ", text_vectorized_array)  # Afficher le tableau pour déboguer
+
+        # Créer un DataFrame pour inspecter les termes activés
+        df_vectorized = pd.DataFrame(text_vectorized_array, columns=vectorizer.get_feature_names_out())
+        non_zero_columns = df_vectorized.loc[:, (df_vectorized != 0).any(axis=0)]
+        st.write("Non-zero columns: \n", non_zero_columns)
         #fin debogue
 
         #bow_predict_result=bow_model.predict(text_cleaned_list)
