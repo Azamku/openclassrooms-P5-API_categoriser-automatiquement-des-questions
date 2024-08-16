@@ -7,5 +7,6 @@ Le contenu du repository est le suivant:
 - le fichier streamlit_app.py qui correspond à l'interface ou l'entrée de notre api qui permet de réaliser les prédictions de tags
 - notre modele selectionné tag_predictor_bow_model.pkl qui correspond a notre modèle de type Bow (qui utilise une régression logistique avec la stratégie OvR)
 - le fichier mlb_bow_model.pkl qui nous permet de convertir les vecteurs de tags prédits en une chaine compréhensible.
+- Deux scripts qui nous permis d'installer les ressources spacy et nltk dans l'environnement streamlite cloud : download_spacy_model.py et download_nltk_resources.py
 
 Un second repository contient les scripts de chargement des questions de stackoverflow, d'exploration et de modelisation.
