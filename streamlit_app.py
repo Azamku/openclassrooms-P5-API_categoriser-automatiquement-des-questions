@@ -8,6 +8,11 @@ import joblib
 import subprocess
 import sys
 
+# Afficher la version de Python
+python_version = platform.python_version()
+st.write(f"La version de Python utilisée est : {python_version}")
+
+
 st.write(f"debut code telech nltk: ")
 # Assurez-vous que les ressources NLTK sont téléchargées
 try:
