@@ -8,6 +8,7 @@ import joblib
 import subprocess
 import sys
 
+import platform
 # Afficher la version de Python
 python_version = platform.python_version()
 st.write(f"La version de Python utilisée est : {python_version}")
